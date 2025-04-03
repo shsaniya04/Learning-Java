@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class MinMaxArray {
+public class MinMaxArray2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the size:");
@@ -11,14 +11,19 @@ public class MinMaxArray {
         for (int i = 0; i < size; i++) {
             arr[i] = sc.nextInt();
         }
-
-        System.out.println("Enter the value for x: ");
-        int x = sc.nextInt();
-
-        for (int i = 0; i < size; i++) {
-            if (arr[i] == x) {
-                System.out.print("The element found at index: " + i);
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+        
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+            if (arr[i] > max) {
+                max = arr[i];
             }
         }
+       
+        System.out.println("Max:" + max);
+        System.out.println("Min:" + min);
     }
 }
